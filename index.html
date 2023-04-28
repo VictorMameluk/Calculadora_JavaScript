@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font awesome-->
+    <script src="https://kit.fontawesome.com/7f9dcbf011.js" crossorigin="anonymous"></script>
+
+    <!-- estilo customizado-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title> Calculadora - JavaScript </title>
+  </head>
+  <body>
+
+      <div class="container"> <!-- inicio container -->
+        <div class="row"> <!-- inicio row-->
+          <div class="col d-flex justify-content-center">
+
+            <div class="calculadora">
+                <input type="text" id="resultado" class="form-control resultado" placeholder="0" disabled="disabled">
+
+                <div class="row">
+                  <button onclick="calcular('acao','c')" class="btn btn-warning btn-lg clear font-weight-light" type="button">c</button>
+                  <button onclick="calcular('acao','/')" class="btn btn-dark btn-lg font-weight-light" type="button">/</button>
+                  <button onclick="calcular('acao','*')" class="btn btn-dark btn-lg font-weight-light">*</button>
+                </div>
+
+                <div class="row">
+                  <button onclick="calcular('valor',7)" class="btn btn-dark btn-lg font-weight-light" type="button">7</button>
+                  <button onclick="calcular('valor',8)" class="btn btn-dark btn-lg font-weight-light" type="button">8</button>
+                  <button onclick="calcular('valor',9)" class="btn btn-dark btn-lg font-weight-light" type="button">9</button>
+                  <button onclick="calcular('acao','-')" class="btn btn-dark btn-lg font-weight-light" type="button">-</button>
+                </div>
+
+                <div class="row">
+                  <button onclick="calcular('valor',4)" class="btn btn-dark btn-lg font-weight-light" type="button">4</button>
+                  <button onclick="calcular('valor',5)" class="btn btn-dark btn-lg font-weight-light" type="button">5</button>
+                  <button onclick="calcular('valor',6)" class="btn btn-dark btn-lg font-weight-light" type="button">6</button>
+                  <button onclick="calcular('acao','+')" class="btn btn-dark btn-lg font-weight-light" type="button">+</button>
+                </div>
+
+                <div class="row">
+                  <button onclick="calcular('valor',1)" class="btn btn-dark btn-lg font-weight-light" type="button">1</button>
+                  <button onclick="calcular('valor',2)" class="btn btn-dark btn-lg font-weight-light" type="button">2</button>
+                  <button onclick="calcular('valor',3)" class="btn btn-dark btn-lg font-weight-light" type="button">3</button>
+                  <button onclick="calcular('acao','=')" class="btn btn-primary btn-lg enter" type="button">=</button>
+                </div>
+
+                <div class="row">
+                  <span class="sinal_igual">
+                    <button onclick="calcular('valor',0)" class="btn btn-dark btn-lg zero font-weight-light" type="button">0</button>
+                    <button onclick="calcular('acao','.')" class="btn btn-dark btn-lg font-weight-light" type="button">.</button>
+                  </span>
+                </div>
+            </div>
+          </div>
+        </div> <!-- final row-->
+      </div> <!-- fim container -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+          
+          function calcular (tipo, valor){
+            
+            //aqui verifiquei se o tipo é ===(idêntico) a uma ação ou se é um valor;
+            //se for um valor ai vamos prosseguir com a operação
+
+            if(tipo === 'acao'){
+
+              if(valor === 'c'){
+                //limpar o visor(id resultado)
+                document.getElementById('resultado').value =''
+              }
+              if(valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.'){
+
+                document.getElementById('resultado').value += valor
+
+              }
+              // Se o argumento for uma expressão, eval() avalia a expressão. Se o argumento for uma ou mais instruções JavaScript, eval() executará as instruções.
+
+              // aparentemente não é mais recomendado usar o eval pois corre risco de seu app sofrer ataques, objetivo de usar ele aqui é simplificar já que estamos iniciando o aprendizado agora.
+              if(valor === '='){
+                 var valor_campo = eval(document.getElementById('resultado').value)
+
+                 document.getElementById('resultado').value = valor_campo
+                 
+              }
+
+            }else if(tipo === 'valor'){
+             
+              //var valor_campo = document.getElementById('resultado').value
+              //document.getElementById('resultado').value = valor_campo + valor
+
+              //  OBS: so há concatenação nesse caso acima, pois o valor retornado do input é considerado uma string do contrário somaria
+              // Abaixo segue a forma mais enxuta do código com o mesmo resultado
+
+              document.getElementById('resultado').value += valor
+            }
+
+          }
+
+      </script>
+
+
+
+
+
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
