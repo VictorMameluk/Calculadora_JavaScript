@@ -1,6 +1,6 @@
 # Projeto Calc_JavaScript
 
-Nesse projeto Acadêmico criei uma calculadora responsiva usando o framework bootstrap e coloquei em prática os conhecimentos básicos obtidos em JavaScript; 
+Nesse projeto Acadêmico criei uma calculadora responsiva usando o framework bootstrap e coloquei em prática os conhecimentos básicos obtidos em JavaScript.
 
 
 # tecnologias utilizadas
@@ -9,6 +9,8 @@ Nesse projeto Acadêmico criei uma calculadora responsiva usando o framework boo
 <img alt="bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
 <img alt="javaScript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 
+<img alt="Calculadora" src="https://github.com/VictorMameluk/Calculadora_JavaScript/blob/master/assets/CalcRespon.jpg?raw=true">
+<img alt="Calculadora responsiva" src="https://github.com/VictorMameluk/Calculadora_JavaScript/blob/master/assets/CalcRespon2.jpg?raw=true">
 
 # Autor:
  
